@@ -6,7 +6,7 @@ public class Main {
         System.out.print("Hello! What is your name? ");
         String name = sc.next();
         System.out.print("Welcome to Math Drill Fun Time " + name + "! This is a program where you can do fun math drills and stack up points!");
-        System.out.println("Before we begin, what level would you like to play? (1/ 2/ 3/ 4/ 5/ 6): ");
+        System.out.println("Before we begin, what level would you like to play? (1/ 2/ 3): ");
         String level = sc.next();
         int level_num = Integer.parseInt(level);
         if (level_num > 6 || level_num < 0) {
@@ -18,13 +18,13 @@ public class Main {
         start.toLowerCase();
         if (start.equals("s")) {
             Game math = new Game(level_num);
-
-            math.range(1);
-            math.problem_generate();
-            String givenAnswer = sc.next();
-            int actualAnswer = math.answer();
-            math.checkAnswer(givenAnswer, actualAnswer);
-
+            while(math.pointCheck() != false) {
+                math.range(1);
+                math.problem_generate();
+                String givenAnswer = sc.next();
+                int actualAnswer = math.answer();
+                math.checkAnswer(givenAnswer, actualAnswer);
+            }
         }
     }
 }
