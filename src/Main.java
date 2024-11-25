@@ -19,7 +19,7 @@ public class Main {
         if (start.equals("s")) {
             Game math = new Game(level_num);
             while(math.pointCheck() != false) {
-                math.range(1);
+                math.range(level_num);
                 math.problem_generate();
                 String givenAnswer = sc.next();
                 int actualAnswer = math.answer();

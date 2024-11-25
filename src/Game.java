@@ -6,7 +6,7 @@ public class Game{
     public int x;
     public int y;
     public String operation;
-    private List <java.lang.String> operations = Arrays.asList("+", "-", "*", "/", "^");
+    final private List <java.lang.String> operations = Arrays.asList("+", "-", "*", "/", "^");
     public int start_x;
     public int end_x;
     public int start_y;
@@ -36,7 +36,7 @@ public class Game{
             start_y = 1;
             end_y = 15;
             operationRangeBeginning = 0;
-            operationRangeEnd = 5;
+            operationRangeEnd = 4;
         }
         if(level_num == 3){
             start_x = 1;
@@ -44,7 +44,7 @@ public class Game{
             start_y = 1;
             end_y = 6;
             operationRangeBeginning = 0;
-            operationRangeEnd = 6;
+            operationRangeEnd = 4;
         }
     }
 
@@ -56,13 +56,13 @@ public class Game{
         else if (operation.equals("-")) {
             answer = x-y;
         }
-        else if (operation.equals('*')){
+        else if (operation.equals("*")){
             answer = x*y;
         }
-        else if (operation.equals('/')){
+        else if (operation.equals("/")){
             answer = x*y;
         }
-        else if (operation.equals('^')){
+        else if (operation.equals("^")){
             double x_dbl = (double)x;
             double y_dbl = (double)y;
             answer = (int)Math.pow(x_dbl, y_dbl);
@@ -83,13 +83,13 @@ public class Game{
         int givenInt = Integer.parseInt(given);
         if( givenInt == answer){
             System.out.println("You are correct!");
+            System.out.println("Next question!");
             count++;
         }
     }
 
     public boolean pointCheck(){
         if(round== count){
-            System.out.println("Next question!");
             return true;
         }
         else{
