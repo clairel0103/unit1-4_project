@@ -44,10 +44,12 @@ public class Game{
             start_y = 1;
             end_y = 6;
             operationRangeBeginning = 0;
-            operationRangeEnd = 4;
+            operationRangeEnd = 5;
         }
     }
-
+    public String toString(){
+        return "Let's start!";
+    }
     public int answer(){
         int answer = 0;
         if(operation.equals("+")){
