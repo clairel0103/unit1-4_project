@@ -18,6 +18,7 @@ public class Main {
         start.toLowerCase();
         if (start.equals("s")) {
             Game math = new Game(level_num);
+            System.out.println("Hello!");
             System.out.println(math);
             while(math.pointCheck() != false) {
                 math.range(level_num);
